@@ -63,7 +63,11 @@ export default class MacPackager extends PlatformPackager<MacConfiguration> {
 
         case "zip":
           // https://github.com/electron-userland/electron-builder/issues/2313
-          mapper(name, outDir => new ArchiveTarget(name, outDir, this, true))
+          let isWriteUpdateInfo = true;
+          if (this.platformSpecificBuildOptions.writeUpdateInfo != null) {
+            isWriteUpdateInfo = this.platformSpecificBuildOptions.writeUpdateInfo;
+          }
+          mapper(name, outDir => new ArchiveTarget(name, outDir, this, isWriteUpdateInfo))
           break
 
         case "pkg":

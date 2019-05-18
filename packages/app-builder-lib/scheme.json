@@ -2190,6 +2190,10 @@
                     ],
                     "description": "The target package type: list of `default`, `dmg`, `mas`, `mas-dev`, `pkg`, `7z`, `zip`, `tar.xz`, `tar.lz`, `tar.gz`, `tar.bz2`, `dir`. Defaults to `default` (dmg and zip for Squirrel.Mac)."
                 },
+                "writeUpdateInfo": {
+                  "type": "boolean",
+                  "default": true
+                },
                 "type": {
                     "anyOf": [
                         {
@@ -5715,4 +5719,3 @@
     },
     "type": "object"
 }
-
